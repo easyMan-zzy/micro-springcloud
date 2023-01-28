@@ -1,0 +1,36 @@
+server:
+  port: 7001
+  servlet:
+    context-path: /m-admin
+
+spring:
+  application:
+    name: m-admin
+  security:
+    user:
+      name: zman
+      password: 123456
+  cloud:
+    nacos:
+      discovery:
+        enabled: true
+        server-addr: 118.31.59.198:8848
+        namespace: 0c585af7-5dda-4323-9a96-6d626653cf5c
+        metadata:
+          management:
+            context-path: ${server.servlet.context-path}/actuator
+          user.name: zman
+          user.password: 123456
+  thymeleaf:
+    check-template: false
+    check-template-location: false
+
+# 暴露端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'  # 需要开放的端点。默认值只打开 health 和 info 两个端点。通过设置 *, 可以开放所有端点
+  endpoint:
+    health:
+      show-details: always

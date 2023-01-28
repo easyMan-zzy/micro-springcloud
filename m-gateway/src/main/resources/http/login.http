@@ -1,0 +1,17 @@
+### 登录
+POST 127.0.0.1:9001/m-gateway/m/login
+Content-Type: application/json
+
+{
+  "username": "zman",
+  "password": "fcea920f7412b5da7be0cf42b8c93759"
+}
+
+###
+POST 127.0.0.1:9001/m-gateway/m/register
+Content-Type: application/json
+
+{
+  "username": "zman2",
+  "password": "fcea920f7412b5da7be0cf42b8c93759"
+}
